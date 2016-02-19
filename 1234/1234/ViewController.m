@@ -2,7 +2,7 @@
 //  ViewController.m
 //  1234
 //
-//  Created by qianfeng on 16/2/19.
+//  Created by 王贵彬 on 16/2/19.
 //  Copyright © 2016年 wangguibin. All rights reserved.
 //
 
