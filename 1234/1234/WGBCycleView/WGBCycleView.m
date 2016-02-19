@@ -187,7 +187,7 @@
 
     CGFloat time = self.scrollTime ? self.scrollTime : 3.0;
 
-    [[NSRunLoop mainRunLoop] addTimer:[NSTimer scheduledTimerWithTimeInterval:time target:self selector:@selector(timeUpdate) userInfo:nil repeats:YES] forMode:NSRunLoopCommonModes];
+    [[NSRunLoop mainRunLoop] addTimer:[NSTimer scheduledTimerWithTimeInterval:time target:self selector:@selector(timeUpdate) userInfo:nil repeats:YES] forMode:NSDefaultRunLoopMode];
 }
 
 //定时器回调
