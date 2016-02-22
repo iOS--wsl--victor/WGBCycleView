@@ -106,7 +106,7 @@
     self.scrollview.contentSize=CGSizeMake(Kwidth*(_imagesCount+2), KCycHeight);
 
 
-   NSLog(@"%@",images);
+//   NSLog(@"%@",images);
     //添加图片
     for (int i=0; i<_imagesCount+2; i++) {
 
@@ -143,6 +143,11 @@
 
             imageView=[[UIImageView alloc]initWithFrame:CGRectMake(Kwidth*i, 0, Kwidth, KCycHeight)];
 
+            imageView.tag= i-1 ;
+
+            imageView.userInteractionEnabled=YES;
+
+            [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(clickTap:)]];
 
             [imageView sd_setImageWithURL:[NSURL URLWithString:images[i-1]]];
 
@@ -157,6 +162,17 @@
 
     [self setUpPageControl];
 }
+
+
+//手势回调
+- (void)clickTap:(UITapGestureRecognizer* )tap
+{
+    
+    self.clickTap(tap.view.tag);
+
+}
+
+
 
 //page
 -(void)setUpPageControl
@@ -187,7 +203,7 @@
 
     CGFloat time = self.scrollTime ? self.scrollTime : 3.0;
 
-    [[NSRunLoop mainRunLoop] addTimer:[NSTimer scheduledTimerWithTimeInterval:time target:self selector:@selector(timeUpdate) userInfo:nil repeats:YES] forMode:NSDefaultRunLoopMode];
+    [[NSRunLoop mainRunLoop] addTimer:[NSTimer scheduledTimerWithTimeInterval:time target:self selector:@selector(timeUpdate) userInfo:nil repeats:YES] forMode:NSRunLoopCommonModes];
 }
 
 //定时器回调

@@ -18,7 +18,7 @@ typedef NS_ENUM(NSInteger,WGBCycleViewImageType){
 
 @interface WGBCycleView : UIView<UIScrollViewDelegate>
 
-
+@property (nonatomic,copy) void (^clickTap)(NSInteger index);
 
 @property (nonatomic,strong) UIColor *curentPageTinColor;//当前的点的颜色
 @property (nonatomic,strong) UIColor *pageTinColor;//全部点的背景色
