@@ -61,15 +61,6 @@
     return cycleView;
 }
 
-
-- (void)layoutSubviews
-{
-
-    [super layoutSubviews];
-
-
-}
-
 /**
  *  初始化 scrollView
  */
@@ -172,8 +163,6 @@
 
 }
 
-
-
 //page
 -(void)setUpPageControl
 {
@@ -195,7 +184,6 @@
     [self addSubview:_page];
 
 }
-
 
 //定时器
 -(void)timer

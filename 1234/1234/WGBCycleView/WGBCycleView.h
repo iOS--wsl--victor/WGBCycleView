@@ -18,15 +18,44 @@ typedef NS_ENUM(NSInteger,WGBCycleViewImageType){
 
 @interface WGBCycleView : UIView<UIScrollViewDelegate>
 
+
+/**
+ *  手势回调block
+ */
 @property (nonatomic,copy) void (^clickTap)(NSInteger index);
 
-@property (nonatomic,strong) UIColor *curentPageTinColor;//当前的点的颜色
-@property (nonatomic,strong) UIColor *pageTinColor;//全部点的背景色
-@property (nonatomic,assign) CGFloat scrollTime;//滚动的间隔时间
+/**
+ *  当前的点的颜色
+ */
+@property (nonatomic,strong) UIColor *curentPageTinColor;
+
+/**
+ *  全部点的背景色
+ */
+@property (nonatomic,strong) UIColor *pageTinColor;
+
+/**
+ *  滚动的间隔时间
+ */
+@property (nonatomic,assign) CGFloat scrollTime;
 
 
+/**
+ *  类方法快速创建
+ *
+ *  @param images    图片
+ *  @param imageType 图片类型
+ *
+ *  @return 返回这一个滚动轮播器对象
+ */
 +(instancetype)cycleViewWithImages:(NSArray*)images  type:(WGBCycleViewImageType)imageType;
 
+/**
+ *  添加图片的方法
+ *
+ *  @param images    图片
+ *  @param imageType 图片类型
+ */
 - (void)addCycleViewWithImages:(NSArray*)images type:(WGBCycleViewImageType)imageType;
 
 
