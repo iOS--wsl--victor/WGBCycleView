@@ -215,14 +215,14 @@
 {
     if (scrollView == _scrollview)
     {
-        if (scrollView.contentOffset.x/375==0) {
+        if (scrollView.contentOffset.x/Kwidth==0) {
             scrollView.contentOffset=CGPointMake(Kwidth*_imagesCount, 0);
-        }else if (scrollView.contentOffset.x/375==_imagesCount+1){
+        }else if (scrollView.contentOffset.x/Kwidth==_imagesCount+1){
 
             scrollView.contentOffset=CGPointMake(Kwidth, 0);
         }
 
-        CGFloat offsetCount = scrollView.contentOffset.x/375;
+        CGFloat offsetCount = scrollView.contentOffset.x/Kwidth;
 
         _page.currentPage=offsetCount-1;
 
